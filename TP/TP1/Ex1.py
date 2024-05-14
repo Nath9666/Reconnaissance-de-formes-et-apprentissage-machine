@@ -82,6 +82,6 @@ if __name__ == "__main__":
     plt.show()
 
     # Appliquer la fonction compute_ACP aux données générées
-    transformed_data, explained_variance_ratio = compute_ACP(data)
+    transformed_data, explained_variance_ratio, pca = compute_ACP(data)
     print("Transformed Data:\n", transformed_data)
     print("Explained Variance Ratio:\n", explained_variance_ratio)

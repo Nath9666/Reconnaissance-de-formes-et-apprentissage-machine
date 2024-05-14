@@ -80,7 +80,7 @@ plt.legend(iris.target_names)
 plt.grid()
 plt.show()
 
-def dimension_minimale(taux: float) -> int:
+def dimension_minimale(data:np.ndarray , taux: float) -> int:
     """
     Calcule la dimension minimale nécessaire pour conserver un certain taux de variance expliquée.
 
@@ -94,25 +94,25 @@ def dimension_minimale(taux: float) -> int:
     
     # Appliquer l'ACP avec toutes les composantes
     pca = PCA()
-    pca.fit(iris.data)
+    pca.fit(data)
     
     # Calculer la somme cumulée de la proportion de variance expliquée
     cumulative_explained_variance = np.cumsum(pca.explained_variance_ratio_)
     
-    # Trouver le nombre de dimensions requises pour préserver 95% de la variance
+    # Trouver le nombre de dimensions requises pour préserver le taux de variance spécifié
     num_dimensions = np.where(cumulative_explained_variance >= taux)[0][0] + 1
     print("Nombre de dimensions pour preserver {}% de la variance (methode manuelle) : ".format(taux), num_dimensions)
     
-    # Appliquer l'ACP avec 95% de la variance préservée
+    # Appliquer l'ACP avec le taux de variance spécifié
     pca = PCA(n_components=taux)
-    transformed_data = pca.fit_transform(iris.data)
+    transformed_data = pca.fit_transform(data)
     
     # Afficher le nombre de composantes principales
     print("Nombre de dimensions pour preserver {}% de la variance (methode PCA) : ".format(taux), transformed_data.shape)
     return num_dimensions
 
 #? Calculer la dimension minimale nécessaire
-dimension_minimale(0.95)
+dimension_minimale(iris.data, 0.95)
 
 #?  Contribution  de  la  variance  en  fonction  du  nombre  de  dimensions
 # Appliquer l'ACP avec toutes les composantes
