@@ -1,6 +1,7 @@
 from Ex1 import *
 from sklearn.datasets import load_iris
 import pandas as pd
+from sklearn.decomposition import PCA
 
 # Charger le dataset iris
 iris = load_iris()
@@ -31,8 +32,18 @@ def explore_dataset (df: pd.DataFrame) -> None:
     print(df.describe())
     print("-----------------------------")
 
-# Appliquer l'ACP avec 2 composantes principales
+#? Explore the dataset
+#explore_dataset(iris_df)
+
+#? Appliquer l'ACP avec 2 composantes principales
 transformed_data, explained_variance_ratio = compute_ACP(iris.data, n_components=2)
 
 # Vérifier la dimension des données après application de l'ACP
 print("Dimension des donnees apres application de l'ACP :", transformed_data.shape)
+
+#? Affiche l'acp et les composantes principales
+pca = PCA(n_components=2)
+pca.fit(iris.data)
+
+# Afficher les composantes principales
+print("Composantes principales :\n", pca.components_)
