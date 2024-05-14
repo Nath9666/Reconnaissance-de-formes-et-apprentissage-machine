@@ -115,3 +115,18 @@ def dimension_minimale(taux: float) -> int:
 dimension_minimale(0.95)
 
 #?  Contribution  de  la  variance  en  fonction  du  nombre  de  dimensions
+# Appliquer l'ACP avec toutes les composantes
+pca = PCA()
+pca.fit(iris.data)
+
+# Calculer la somme cumulée de la proportion de variance expliquée
+cumulative_explained_variance = np.cumsum(pca.explained_variance_ratio_)
+
+# Créer un graphique de la somme cumulée de la proportion de variance expliquée
+plt.figure(figsize=(8, 6))
+plt.plot(range(1, len(cumulative_explained_variance) + 1), cumulative_explained_variance)
+plt.xlabel('Nombre de dimensions')
+plt.ylabel('Variance cumulée expliquée')
+plt.title('Contribution de la variance en fonction du nombre de dimensions')
+plt.grid()
+plt.show()
