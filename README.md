@@ -21,6 +21,8 @@ Dans celui-ci on voit les base de l'acp et de l'analyse discriminante.
 Plusieur ecercices nous son donnée pour nous aider à comprendre les notions.
 Chaque exercice est accompagné d'un code source en python ansi que d'un compte rendu en ipynb.
 
+#### Partie 1
+
 - [Exercice 1 Notebook](./TP/TP1/Ex1.ipynb)
 - [Exercice 1 Code](./TP/TP1/Ex1.py)
 - [Exercice 2 Notebook](./TP/TP1/Ex2.ipynb)
@@ -29,5 +31,8 @@ Chaque exercice est accompagné d'un code source en python ansi que d'un compte 
 - [Exercice 3 Code](./TP/TP1/Ex3.py)
 - [Exercice 4 Notebook](./TP/TP1/Ex4.ipynb)
 - [Exercice 4 Code](./TP/TP1/Ex4.py)
+
+#### Partie 2
+
 - [Partie2 Notebook](./TP/TP1/Partie2.ipynb)
 - [Partie2 Code](./TP/TP1/Partie2.py)
