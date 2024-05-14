@@ -59,12 +59,16 @@ def compute_ACP(data : np.ndarray, n_components=None):
     Returns:
     - transformed_data: numpy.ndarray
         The transformed data after applying PCA.
+    - explained_variance_ratio: numpy.ndarray
+        The ratio of explained variance for each principal component.
+    - pca: sklearn.decomposition.PCA
+        The PCA object used for the transformation.
 
     """
     pca = PCA(n_components=n_components)
     transformed_data = pca.fit_transform(data)
     explained_variance_ratio = pca.explained_variance_ratio_
-    return transformed_data, explained_variance_ratio
+    return transformed_data, explained_variance_ratio, pca
 
 if __name__ == "__main__":
     # Générer 500 vecteurs dans l'espace 3D
