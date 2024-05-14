@@ -2,6 +2,7 @@ from Ex1 import *
 from sklearn.datasets import load_iris
 import pandas as pd
 from sklearn.decomposition import PCA
+import matplotlib.pyplot as plt
 
 # Charger le dataset iris
 iris = load_iris()
@@ -43,7 +44,37 @@ print("Dimension des donnees apres application de l'ACP :", transformed_data.sha
 
 #? Affiche l'acp et les composantes principales
 pca = PCA(n_components=2)
-pca.fit(iris.data)
+transformed_data = pca.fit_transform(iris.data)
 
 # Afficher les composantes principales
 print("Composantes principales :\n", pca.components_)
+
+# Créer un DataFrame à partir des données transformées
+transformed_df = pd.DataFrame(data=transformed_data, columns=['Principal Component 1', 'Principal Component 2'])
+
+# Ajouter les labels des classes au DataFrame
+transformed_df['Target'] = iris.target
+
+# Afficher chaque classe avec une couleur différente
+colors = ['r', 'g', 'b']
+targets = [0, 1, 2]
+
+for target, color in zip(targets, colors):
+    indicesToKeep = transformed_df['Target'] == target
+    plt.scatter(transformed_df.loc[indicesToKeep, 'Principal Component 1'], transformed_df.loc[indicesToKeep, 'Principal Component 2'], c=color)
+
+# Calculer la proportion de variance expliquée pour chaque composante principale
+explained_variance_ratio = pca.explained_variance_ratio_
+
+# Convertir la proportion de variance expliquée en pourcentage
+explained_variance_ratio_percentage = explained_variance_ratio * 100
+
+# Afficher la proportion de variance expliquée pour chaque composante principale en pourcentage
+print("Explained Variance Ratio (in %): ", explained_variance_ratio_percentage)
+
+plt.xlabel('Principal Component 1 ({}%)'.format(round(explained_variance_ratio_percentage[0], 2)))
+plt.ylabel('Principal Component 2 ({}%)'.format(round(explained_variance_ratio_percentage[1], 2)))
+plt.title('2D PCA of Iris Dataset')
+plt.legend(iris.target_names)
+plt.grid()
+plt.show()
