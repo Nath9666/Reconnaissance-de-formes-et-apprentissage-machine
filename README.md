@@ -32,7 +32,7 @@ Chaque exercice est accompagné d'un code source en python ansi que d'un compte 
 - [Exercice 4 Notebook](./TP/TP1/Ex4.ipynb)
 - [Exercice 4 Code](./TP/TP1/Ex4.py)
 
-#### Partie 2c
+#### Partie 2
 
 - [Partie2 Notebook](./TP/TP1/Partie2.ipynb)
 - [Partie2 Code](./TP/TP1/Partie2.py)
