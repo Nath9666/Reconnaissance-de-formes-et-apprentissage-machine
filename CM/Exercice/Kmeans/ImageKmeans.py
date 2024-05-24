@@ -38,5 +38,8 @@ def kmeans_segmentation(path, k_values, color=False):
     plt.show()
 
 # Utilisation de la fonction
-kmeans_segmentation('CM\\Exercice\\Kmeans\\arbre.jpg', [2, 3, 4, 5], color=False)
-kmeans_segmentation('CM\\Exercice\\Kmeans\\arbre.jpg', [2, 3, 4, 5], color=True)
+PATH = 'CM\\Exercice\\Kmeans\\arbre.jpg'
+k_values = [2, 3, 4, 5, 10]
+
+kmeans_segmentation(PATH, k_values, color=False)
+kmeans_segmentation(PATH, k_values, color=True)
