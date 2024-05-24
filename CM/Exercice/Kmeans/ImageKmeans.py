@@ -3,22 +3,27 @@ import matplotlib.pyplot as plt
 import numpy as np
 from PIL import Image
 
+def histograme(np_img: np.ndarray):
+    plt.figure()
+    plt.hist(np_img.ravel(), bins=256, color='black')
+    plt.xlabel('Niveau de gris')
+    plt.ylabel('Nombre de pixels')
+
 def kmeans_segmentation(path, k_values, color=False):
     # Lire l'image
     if color:
         img = Image.open(path)
         img_np = np.array(img)
         pixels = img_np.reshape(-1, 1)
+        print(img_np.shape)
     else:
         img = Image.open(path).convert('L')
         img_np = np.array(img)
         pixels = img_np.reshape(-1, 1)
+        print(img_np.shape)
 
-    # Afficher l'histogramme
-    plt.hist(img_np.ravel(), bins=256, color='black')
-    plt.xlabel('Niveau de gris')
-    plt.ylabel('Nombre de pixels')
-    #plt.show()
+    # Afficher l'histogramme de l'image
+    histograme(img_np)
 
     # Appliquer KMeans avec différentes valeurs de k
     for k in k_values:
@@ -31,6 +36,7 @@ def kmeans_segmentation(path, k_values, color=False):
         
         # Normaliser l'image segmentée pour qu'elle soit dans l'intervalle [0, 1]
         segmented_img = (segmented_img - segmented_img.min()) / (segmented_img.max() - segmented_img.min())
+        histograme(segmented_img)
         
         # Afficher l'image segmentée
         plt.figure()
@@ -39,7 +45,7 @@ def kmeans_segmentation(path, k_values, color=False):
 
 # Utilisation de la fonction
 PATH = 'CM\\Exercice\\Kmeans\\arbre.jpg'
-k_values = [2, 3, 4, 5, 10]
+k_values = [2, 3, 4, 5, 10, 22]
 
 kmeans_segmentation(PATH, k_values, color=False)
 kmeans_segmentation(PATH, k_values, color=True)
