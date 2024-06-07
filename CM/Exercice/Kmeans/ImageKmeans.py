@@ -19,7 +19,7 @@ def kmeans_segmentation(path, k_values, color=False, output_dir='./output_images
     name = os.path.basename(path)
 
     # Afficher l'histogramme de l'image
-    histograme(img_np)
+    #histograme(img_np)
 
     # Appliquer KMeans avec différentes valeurs de k
     for k in k_values:
@@ -32,7 +32,7 @@ def kmeans_segmentation(path, k_values, color=False, output_dir='./output_images
         
         # Normaliser l'image segmentée pour qu'elle soit dans l'intervalle [0, 1]
         segmented_img = (segmented_img - segmented_img.min()) / (segmented_img.max() - segmented_img.min())
-        histograme(segmented_img)
+        #histograme(segmented_img)
         
         # Afficher l'image segmentée
         plt.figure()
@@ -45,7 +45,8 @@ def kmeans_segmentation(path, k_values, color=False, output_dir='./output_images
     plt.show()
 
 # Utilisation de la fonction
-PATH = 'C:\\Users\\Nathan\\Documents\\Projet\\Reconnaissance-de-formes-et-apprentissage-machine\\CM\\Exercice\\Kmeans\\dog.jpeg'
+PATH = 'C:\\Users\\Nathan\\Documents\\Projet\\Reconnaissance-de-formes-et-apprentissage-machine\\CM\\Exercice\\Kmeans\\loup.png'
+PATH = "C:\\Users\\Nathan\\Documents\\Projet\\Reconnaissance de formes et apprentissage machine\\CM\\Exercice\\Kmeans\\loup.png"
 k_values = [2, 3, 4, 5, 10]
 
 kmeans_segmentation(PATH, k_values, color=False)
