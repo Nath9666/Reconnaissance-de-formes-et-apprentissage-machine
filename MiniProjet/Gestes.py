@@ -10,6 +10,7 @@ def is_fist(hand_landmarks):
     return False
 
 def is_middle_finger(hand_landmarks):
+    #? amelioration de la detection du majeur
     # Exemple simplifié pour détecter un majeur levé
     # Vous pouvez ajouter des règles plus complexes basées sur les positions des landmarks
     middle_finger_tip = hand_landmarks.landmark[mp_hands.HandLandmark.MIDDLE_FINGER_TIP]

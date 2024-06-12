@@ -17,3 +17,7 @@ Pour installer le projet, il suffit de cloner le dépôt git et de lancer le scr
 pip insall  -r requirements.txt
 python main.py
 ```
+
+## Utilisation
+
+Les sons viennent de la librairie [freesound](https://pixabay.com/fr/sound-effects/search/animer/)
