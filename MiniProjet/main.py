@@ -6,7 +6,6 @@ from Gestes import dictionnaire_gestes
 # Initialiser pygame pour la lecture de son
 pygame.init()
 pygame.mixer.init()
-sound = pygame.mixer.Sound('chemin/vers/votre/fichier/sonore.wav')  # Charger le fichier sonore
 
 # Initialiser MediaPipe Hands
 mp_hands = mp.solutions.hands
