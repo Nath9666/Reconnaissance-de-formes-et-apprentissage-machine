@@ -14,7 +14,7 @@ Ansi que réagir en conséquence via des sons et des images.
 Pour installer le projet, il suffit de cloner le dépôt git et de lancer le script  :
 
 ```bash
-pip insall  -r requirements.txt
+pip install  -r requirements.txt
 python main.py
 ```
 
