@@ -5,11 +5,13 @@ Dans ce depot, vous trouverez les codes sources des TP de Reconnaissance de form
 Ansi que les CMs et TDs.
 
 ## Installation
+
 ```shell
 pip install -r requirements.txt
 ```
 
 ## CM
+
 - [Intoduction à la reconnaissance de formes](.\CM\ST2IAI-CM1.pdf)
 - [ACP](.\CM\ST2IAI-PCA.pdf)
 
