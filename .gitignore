@@ -2,6 +2,6 @@ __pycache__
 
 
 *.zip
-*.jpg
 
 train/
+archive/
