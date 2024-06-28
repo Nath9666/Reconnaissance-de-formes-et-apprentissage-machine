@@ -20,8 +20,8 @@ def read_coordinates(file_path):
         return coordinates
 
 # Chemin du dossier contenant les images et les coordonnées
-image_folder = 'dataset/photos'
-coordinates_folder = 'dataset/coordonées'
+image_folder = '../assets/archive/images/train/'
+coordinates_folder = '../assets/archive/labels2/'
 
 # Lister tous les fichiers d'image
 image_files = [f for f in os.listdir(image_folder) if f.endswith(('jpg', 'jpeg', 'png'))]
