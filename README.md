@@ -1,40 +1,20 @@
-# Reconnaissance de formes et apprentissage machine
+# Reconaissance de forme
 
-Dans ce depot, vous trouverez les codes sources des TP de Reconnaissance de formes et apprentissage machine.
+## Introduction
 
-Ansi que les CMs et TDs.
+Ce projet dont vous trouverez l'[énoncé](./Projet_ReconnaissanceFormes.pdf) se compose en diférente partie.
 
-## Installation
+Pour des soucis de lecture et de lisibilité, nous avons desidé de le diviser en plusieurs parties en suivant l'énoncé.
 
-```shell
-pip install -r requirements.txt
-```
+Ce projet est réalisé par :
 
-## CM
+- [Nathan Morel](./)
+- [Tom Deaupuis](./)
 
-- [Intoduction à la reconnaissance de formes](.\CM\ST2IAI-CM1.pdf)
-- [ACP](.\CM\ST2IAI-PCA.pdf)
+## Partie 1
 
-## TP
+Dans cette partie nous explorons la détection de visages, vous trouverez le code dans le fichier [main.ipynb](./Detection_Visage/main.ipynb)
 
-### TP1
+## Partie 2
 
-Dans celui-ci on voit les base de l'acp et de l'analyse discriminante.
-Plusieur ecercices nous son donnée pour nous aider à comprendre les notions.
-Chaque exercice est accompagné d'un code source en python ansi que d'un compte rendu en ipynb.
-
-#### Partie 1
-
-- [Exercice 1 Notebook](./TP/TP1/Ex1.ipynb)
-- [Exercice 1 Code](./TP/TP1/Ex1.py)
-- [Exercice 2 Notebook](./TP/TP1/Ex2.ipynb)
-- [Exercice 2 Code](./TP/TP1/Ex2.py)
-- [Exercice 3 Notebook](./TP/TP1/Ex3.ipynb)
-- [Exercice 3 Code](./TP/TP1/Ex3.py)
-- [Exercice 4 Notebook](./TP/TP1/Ex4.ipynb)
-- [Exercice 4 Code](./TP/TP1/Ex4.py)
-
-#### Partie 2
-
-- [Partie2 Notebook](./TP/TP1/Partie2.ipynb)
-- [Partie2 Code](./TP/TP1/Partie2.py)
+Dans cette partie nous explorons la reconnaissance de visages, vous trouverez le code dans le fichier [main.ipynb](./Reconnaissance_Visage/main.ipynb)
